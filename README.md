@@ -26,3 +26,7 @@ apache/activemq-artemis
 ## Consume test messages (execute from artemis shell)
 `consumer --destination myqueue --message-count 10 --verbose`
 
+### Install docker-compose
+curl -L https://github.com/docker/compose/releases/download/v2.24.5/docker-compose-darwin-x86_64 -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+docker-compose --version
