@@ -11,15 +11,18 @@ docker run --detach \
 -v /root/docker/volumes/artemismq:/var/lib/artemis-instance/etc-override \
 apache/activemq-artemis
 ```
+## Change the restart policy for an already running container named artemismq
+`docker update --restart unless-stopped artemismq`
 
-# Connect to container
+## Connect to container
 `docker exec -it artemismq bash`
 
-# Connect to artemis console
+## Connect to artemis console
 `docker exec -it artemismq /var/lib/artemis-instance/bin/artemis shell --user <user> --password <password>`
 
-# Produce test messages
-producer --destination=myqueue --message-size 1024 --message-count 10
+## Produce test messages (execute from artemis shell)
+`producer --destination=myqueue --message-size 1024 --message-count 10`
 
-# Consume test messages
-consumer --destination myqueue --message-count 10 --verbose
+## Consume test messages (execute from artemis shell)
+`consumer --destination myqueue --message-count 10 --verbose`
+
